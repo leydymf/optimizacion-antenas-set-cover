@@ -1,0 +1,23 @@
+# Python
+__pycache__/
+*.pyc
+.DS_Store
+
+# Corridas intermedias y de prueba (no publicadas)
+results/
+results_1/
+results_2/
+results_3/
+results4/
+results_solver_optimizado/
+log_solver_optimizado.txt
+results_highs/ejecucion.log
+
+# Scripts de verificacion usados durante el desarrollo
+src/verificar.py
+src/verificar3.py
+src/verificacion_critica.py
+src/test_definitivo.py
+src/metodo_exacto_con_a.py
+src/metodo_exacto_sin_limite_de_tiempo.py
+src/metodo_exacto_solver_optimizado.py

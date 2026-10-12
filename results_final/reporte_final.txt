@@ -1,0 +1,61 @@
+============================================================================
+ REPORTE COMPARATIVO FINAL : EXACTO  vs  ALGORITMO GENETICO
+ Problema SET COVER - Instancia 500 clientes x 500 antenas
+============================================================================
+
+[1] METODO EXACTO (Branch & Cut, CBC) - corrida con limite de 600s
+----------------------------------------------------------------------------
+  Relajacion lineal (Simplex)    : z_LP    =    27,859.93
+  Cota inferior tras B&C         : z_lower =    no registrada
+  Mejor solucion entera          : z_best  =    51,032.00
+  Numero de antenas              : 23
+  Tiempo de computo              : 600.12 s
+  Optimalidad probada            : False (se detuvo por limite de tiempo)
+  Solucion factible (verificada) : True
+
+[2] METODO EXACTO (HiGHS) - corrida con limite de 1800s
+----------------------------------------------------------------------------
+  Mejor solucion entera          :    49,017.00  (mejor conocida)
+  Cota inferior                  :    31,939.00
+  Numero de antenas              : 22
+  Optimalidad probada            : False (gap restante 34.8%)
+  Solucion factible (verificada) : True
+
+[3] ALGORITMO GENETICO (30 corridas independientes)
+----------------------------------------------------------------------------
+  Mejor costo encontrado         :    49,051.00  (seeds: [45, 52, 69])
+  Peor costo                     :    51,500.00
+  Costo promedio                 :    50,364.47
+  Desviacion estandar            :       748.97
+  Coeficiente de variacion       :       1.4871 %
+  Numero de antenas (min/max/moda): 22 / 23 / 22
+  Tiempo medio por corrida       : 33.48 s
+  Generaciones medias            : 103.2
+  Todas factibles (verificado)   : True
+
+[4] COMPARACION
+----------------------------------------------------------------------------
+  Contra la mejor solucion conocida (49,017, HiGHS 30 min):
+    - Mejor corrida del GA       :    +0.07 %
+    - Promedio de las corridas GA:    +2.75 %
+    - CBC con 600 s              :    +4.11 %
+
+  Contra CBC con 600 s (51,032):
+    - Corridas del GA con menor costo :  24 (80.0%)
+    - Corridas del GA con mayor costo :   6 (20.0%)
+    - Tiempo: el GA tarda en promedio 33 s por corrida, 18 veces menos que CBC
+
+[5] CONCLUSION
+----------------------------------------------------------------------------
+  Ninguno de los dos solvers exactos alcanzo a probar el optimo en el
+  tiempo dado: la instancia es dificil (el gap de HiGHS sigue en
+  35% tras 30 minutos). Con un presupuesto de tiempo
+  limitado, el GA es la mejor opcion: su mejor corrida queda a 0.07% de la
+  mejor solucion conocida usando ~33 s, mientras que CBC con 600 s
+  queda a 4.1%.
+
+  Nota: una version anterior de este reporte afirmaba que CBC habia
+  probado optimalidad. Era un error de lectura del estado: PuLP
+  reporta 'Optimal' aunque CBC se detenga por limite de tiempo.
+
+============================================================================

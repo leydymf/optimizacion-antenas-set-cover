@@ -1,0 +1,19 @@
+============================================================================
+ SENSIBILIDAD AL TIEMPO LIMITE DEL METODO EXACTO (Branch & Cut)
+============================================================================
+
+ Tiempo  | z_lower    | z_best     | Gap final | # antenas | Optimal
+ --------|------------|------------|-----------|-----------|--------
+   180s  |  29,946.67 |  51,055.00 |  41.3443% |        23 | False
+   300s  |  31,713.54 |  51,032.00 |  37.8556% |        23 | False
+   600s  |      s/d   |  51,032.00 |      s/d  |        23 | False
+
+ OBSERVACIONES
+ - z_LP (relajacion lineal, Simplex) = 27,859.93 (constante en las 3 corridas)
+ - De 180s a 300s: z_best mejoro en 23 (0.045%)
+ - De 300s a 600s: z_best mejoro en 0 (0.000%)
+ - Las tres corridas se detuvieron por limite de tiempo, sin probar optimalidad.
+ - La corrida de 600 s no guardo el log de CBC, por eso su cota no esta disponible (s/d).
+ - Mejor solucion conocida (HiGHS, 30 min): 49,017.
+
+============================================================================
