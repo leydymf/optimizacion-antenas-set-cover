@@ -2,7 +2,7 @@
 
 Comparación entre dos formas de resolver un problema de cobertura de conjuntos (Set Cover) con 500 clientes y 500 antenas posibles: elegir qué antenas instalar para cubrir a todos los clientes al menor costo.
 
-> **English summary:** Set Cover instance with 500 customers and 500 candidate antennas. I compared exact integer programming (CBC via PuLP, and HiGHS) against a genetic algorithm we implemented from scratch. Neither exact solver could prove optimality within the time limit; the GA's best run came within 0.07% of the best known solution in about 30 seconds, while CBC with 10 minutes stayed 4.1% above it.
+> **English summary:** Set Cover instance with 500 customers and 500 candidate antennas. We compared exact integer programming (CBC via PuLP, and HiGHS) against a genetic algorithm we implemented from scratch. Neither exact solver could prove optimality within the time limit; the GA's best run came within 0.07% of the best known solution in about 30 seconds, while CBC with 10 minutes stayed 4.1% above it.
 
 **Curso:** Investigación de Operaciones I, UNAB, mayo de 2026
 **Equipo:** Leydy Yohana Macareo Fuentes y Mariana Barragan
